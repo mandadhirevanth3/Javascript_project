@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+ 
+  <title>E-Commerce</title>
+ 
+  <link rel="stylesheet" href="../css/style.css">
+ 
+</head>
+ 
+<body>
+ 
+  <!-- NAVBAR -->
+ 
+  <nav>
+ 
+    <h1>ShopEasy</h1>
+ 
+    <div>
+ 
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Products"
+        onkeyup="debounceSearch()"
+      >
+ 
+      <select
+        id="categoryFilter"
+        onchange="filterProducts()"
+      >
+ 
+        <option value="all">All</option>
+ 
+        <option value="mobile">Mobile</option>
+ 
+        <option value="electronics">Electronics</option>
+ 
+        <option value="fashion">Fashion</option>
+ 
+      </select>
+ 
+      <a href="cart.html">Cart</a>
+ 
+      <a href="login.html">Login</a>
+ 
+      <a href="register.html">Register</a>
+ 
+      <a href="admin.html">Admin</a>
+ 
+    </div>
+ 
+  </nav>
+ 
+  <!-- PRODUCTS -->
+ 
+  <div id="productsContainer"></div>
+ 
+  <!-- PAGINATION -->
+ 
+  <div class="pagination">
+ 
+    <button onclick="previousPage()">
+      Prev
+    </button>
+ 
+    <span id="pageNumber">
+      1
+    </span>
+ 
+    <button onclick="nextPage()">
+      Next
+    </button>
+ 
+  </div>
+ 
+  <script src="../js/api.js"></script>
+  
+  <script src="../js/auth.js"></script>
+
+  <script src="../js/app.js"></script>
+  
+</body>
+ 
+</html>
+ 

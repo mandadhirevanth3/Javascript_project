@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+        <h1>Movie Search App</h1>
+
+            <input type="text" id="searchInput" placeholder="Search movies...">
+
+            <select id="genreFilter">
+                <option value="all">All Genres</option>
+            </select>
+
+    <p id="loading"></p>
+
+    <div id="movieContainer" class="movie-container"></div>
+
+    <div class="pagination">
+        <button id="prevBtn">Previous</button>
+        <span id="pageNumber">1</span>
+        <button id="nextBtn">Next</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Movie Details</h1>
+
+        <a href="index.html" class="watchlist-link">
+            Home
+        </a>
+    </header>
+
+    <div id="movieDetails"></div>
+
+    <script>
+
+        const movie =
+        JSON.parse(
+            localStorage.getItem(
+                "selectedMovie"
+            )
+        );
+
+        const movieDetails =
+        document.getElementById(
+            "movieDetails"
+        );
+
+        if(movie){
+
+            movieDetails.innerHTML = `
+
+                <div class="details-container">
+
+                    <img
+                    src="${
+                        movie.image?.original ||
+                        movie.image?.medium ||
+                        'https://via.placeholder.com/500'
+                    }"
+                    alt="${movie.name}">
+
+                    <h2>${movie.name}</h2>
+
+                    <br>
+
+                    <p>
+                        <strong>Language:</strong>
+                        ${movie.language}
+                    </p>
+
+                    <br>
+
+                    <p>
+                        <strong>Status:</strong>
+                        ${movie.status}
+                    </p>
+
+                    <br>
+
+                    <p>
+                        <strong>Genres:</strong>
+                        ${movie.genres.join(", ")}
+                    </p>
+
+                    <br>
+
+                    <p>
+                        <strong>Rating:</strong>
+                        ${
+                            movie.rating.average ||
+                            "N/A"
+                        }
+                    </p>
+
+                    <br>
+
+                    <h3>Summary</h3>
+
+                    <br>
+
+                    <div>
+                        ${
+                            movie.summary ||
+                            "No summary available"
+                        }
+                    </div>
+
+                </div>
+
+            `;
+
+        }else{
+
+            movieDetails.innerHTML = `
+                <h2 style="text-align:center;margin-top:50px;">
+                    No Movie Selected
+                </h2>
+            `;
+
+        }
+
+    </script>
+
+</body>
+</html>

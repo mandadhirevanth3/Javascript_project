@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Explorer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🎬 Movie Explorer</h1>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search movies..."
+        >
+
+        <select id="genreFilter">
+            <option value="all">All Genres</option>
+        </select>
+
+        <a href="watchlist.html" class="watchlist-link">
+            Watchlist
+        </a>
+    </header>
+
+    <div id="loading">
+        Loading Movies...
+    </div>
+
+    <div id="movieContainer"></div>
+
+    <div class="pagination">
+        <button id="prevBtn">Previous</button>
+
+        <span id="pageNumber">1</span>
+
+        <button id="nextBtn">Next</button>
+    </div>
+
+    <script type="module" src="app.js"></script>
+
+</body>
+</html>
